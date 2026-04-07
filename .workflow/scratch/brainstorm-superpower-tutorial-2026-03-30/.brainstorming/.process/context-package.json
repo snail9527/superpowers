@@ -1,0 +1,31 @@
+{
+  "tech_stack": {
+    "project_name": "superpowers",
+    "version": "5.0.6",
+    "type": "ESM module",
+    "main": ".opencode/plugins/superpowers.js"
+  },
+  "supported_platforms": [
+    "Claude Code",
+    "Cursor",
+    "Codex",
+    "OpenCode",
+    "Gemini CLI"
+  ],
+  "modules": {
+    "skills": "13+ skills across testing, debugging, collaboration, and meta categories",
+    "commands": "brainstorm, write-plan, execute-plan",
+    "agents": "code-reviewer, spec-reviewer, implementer, quality-reviewer",
+    "hooks": "platform-specific hook systems"
+  },
+  "conflict_risk": "low",
+  "topic_keywords": [
+    "learning tutorial",
+    "developer onboarding",
+    "CLI documentation",
+    "skill-based architecture",
+    "agent design patterns",
+    "command structure",
+    "documentation organization"
+  ]
+}

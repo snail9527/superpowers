@@ -1,0 +1,111 @@
+{
+  "session_id": "brainstorm-superpower-tutorial-2026-03-30",
+  "topic": "为 SuperPower 开源项目创建详尽的学习教程",
+  "mode": "auto",
+  "created_at": "2026-03-30T23:17:00Z",
+  "completed_at": "2026-03-30T23:50:00Z",
+  "status": "completed",
+  "non_goals": [
+    "扩展开发教程 - 不涉及编写自定义 Skill",
+    "IDE/编辑器细节 - 不涉及特定平台的使用细节"
+  ],
+  "selected_roles": [
+    "ux-expert",
+    "system-architect",
+    "ui-designer",
+    "subject-matter-expert"
+  ],
+  "role_analyses": {
+    "ux-expert": {
+      "files": 6,
+      "status": "completed"
+    },
+    "system-architect": {
+      "files": 4,
+      "status": "completed"
+    },
+    "ui-designer": {
+      "files": 3,
+      "status": "completed"
+    },
+    "subject-matter-expert": {
+      "files": 6,
+      "status": "completed"
+    }
+  },
+  "feature_list": [
+    {
+      "id": "F-001",
+      "slug": "quick-start",
+      "description": "快速入门教程（10分钟）",
+      "roles": ["ux-expert", "system-architect"],
+      "priority": "P0",
+      "spec_file": "feature-specs/F-001-quick-start.md"
+    },
+    {
+      "id": "F-002",
+      "slug": "core-concepts",
+      "description": "核心概念讲解（Agent/Skill/Command）",
+      "roles": ["ux-expert", "subject-matter-expert"],
+      "priority": "P0",
+      "spec_file": "feature-specs/F-002-core-concepts.md"
+    },
+    {
+      "id": "F-003",
+      "slug": "common-workflows",
+      "description": "常见工作流实战",
+      "roles": ["subject-matter-expert"],
+      "priority": "P0",
+      "spec_file": "feature-specs/F-003-common-workflows.md"
+    },
+    {
+      "id": "F-004",
+      "slug": "quality-assurance",
+      "description": "质量保证流程（TDD + 代码审查）",
+      "roles": ["subject-matter-expert"],
+      "priority": "P1",
+      "spec_file": "feature-specs/F-004-quality-assurance.md"
+    },
+    {
+      "id": "F-005",
+      "slug": "task-oriented",
+      "description": "任务导向指南",
+      "roles": ["ux-expert", "ui-designer"],
+      "priority": "P1",
+      "spec_file": "feature-specs/F-005-task-oriented.md"
+    },
+    {
+      "id": "F-006",
+      "slug": "role-oriented",
+      "description": "角色导向学习路径",
+      "roles": ["ux-expert"],
+      "priority": "P2",
+      "spec_file": "feature-specs/F-006-role-oriented.md"
+    },
+    {
+      "id": "F-007",
+      "slug": "advanced-topics",
+      "description": "高级主题深入",
+      "roles": ["system-architect", "subject-matter-expert"],
+      "priority": "P2",
+      "spec_file": "feature-specs/F-007-advanced-topics.md"
+    }
+  ],
+  "user_decisions": {
+    "UD-001": "认知优先路径（Command → Skill → Agent）",
+    "UD-002": "纯 ASCII 图表",
+    "UD-003": "L1（语法）验证"
+  },
+  "enhancements_applied": [
+    "EP-001: 渐进式深度标记机制",
+    "EP-002: 代码示例分层验证"
+  ],
+  "complexity_score": 4,
+  "review_status": "self_evaluated",
+  "guidance_specification": "guidance-specification.md",
+  "design_research_available": true,
+  "cross_role_analysis": ".cross-role-analysis.md",
+  "feature_specs_directory": "feature-specs/",
+  "feature_index": "feature-specs/feature-index.json",
+  "synthesis_changelog": "feature-specs/synthesis-changelog.md"
+}

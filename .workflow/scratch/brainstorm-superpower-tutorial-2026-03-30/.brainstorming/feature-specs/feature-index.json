@@ -1,0 +1,211 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-03-30",
+  "features": [
+    {
+      "id": "F-001",
+      "name": "快速入门教程（10分钟）",
+      "slug": "quick-start",
+      "priority": "P0",
+      "status": "specified",
+      "estimatedWords": 1800,
+      "estimatedTime": 10,
+      "level": "beginner",
+      "dependencies": [],
+      "relatedFeatures": ["F-002"],
+      "tags": ["onboarding", "quick-start", "beginner"],
+      "decisions": {
+        "ud-001": "cognitive-priority",
+        "ud-002": "ascii-only",
+        "ud-003": "l1-verification"
+      },
+      "file": "F-001-quick-start.md"
+    },
+    {
+      "id": "F-002",
+      "name": "核心概念讲解（Agent/Skill/Command）",
+      "slug": "core-concepts",
+      "priority": "P0",
+      "status": "specified",
+      "estimatedWords": 4500,
+      "estimatedTime": 45,
+      "level": "beginner",
+      "dependencies": ["F-001"],
+      "relatedFeatures": ["F-003", "F-007"],
+      "tags": ["concepts", "agent", "skill", "command"],
+      "decisions": {
+        "ud-001": "cognitive-priority",
+        "ud-002": "ascii-only",
+        "ud-003": "l1-verification"
+      },
+      "file": "F-002-core-concepts.md"
+    },
+    {
+      "id": "F-003",
+      "name": "常见工作流实战",
+      "slug": "common-workflows",
+      "priority": "P0",
+      "status": "specified",
+      "estimatedWords": 6000,
+      "estimatedTime": 90,
+      "level": "intermediate",
+      "dependencies": ["F-002"],
+      "relatedFeatures": ["F-004", "F-005"],
+      "tags": ["workflows", "tdd", "debug", "feature"],
+      "decisions": {
+        "ud-001": "cognitive-priority",
+        "ud-002": "ascii-only",
+        "ud-003": "l1-verification"
+      },
+      "file": "F-003-common-workflows.md"
+    },
+    {
+      "id": "F-004",
+      "name": "质量保证流程（TDD + 代码审查）",
+      "slug": "quality-assurance",
+      "priority": "P1",
+      "status": "specified",
+      "estimatedWords": 3000,
+      "estimatedTime": 40,
+      "level": "intermediate",
+      "dependencies": ["F-002", "F-003"],
+      "relatedFeatures": ["F-007"],
+      "tags": ["tdd", "code-review", "quality"],
+      "decisions": {
+        "ud-001": "cognitive-priority",
+        "ud-002": "ascii-only",
+        "ud-003": "l1-verification"
+      },
+      "file": "F-004-quality-assurance.md"
+    },
+    {
+      "id": "F-005",
+      "name": "任务导向指南",
+      "slug": "task-oriented",
+      "priority": "P1",
+      "status": "specified",
+      "estimatedWords": 5000,
+      "estimatedTime": 30,
+      "level": "intermediate",
+      "dependencies": ["F-002", "F-003"],
+      "relatedFeatures": ["F-006"],
+      "tags": ["tasks", "how-to", "reference"],
+      "decisions": {
+        "ud-001": "cognitive-priority",
+        "ud-003": "l1-verification"
+      },
+      "file": "F-005-task-oriented.md"
+    },
+    {
+      "id": "F-006",
+      "name": "角色导向学习路径",
+      "slug": "role-oriented",
+      "priority": "P2",
+      "status": "specified",
+      "estimatedWords": 3000,
+      "estimatedTime": 15,
+      "level": "all",
+      "dependencies": ["F-001", "F-002", "F-003", "F-004", "F-005"],
+      "relatedFeatures": ["F-007"],
+      "tags": ["roles", "learning-paths", "personalization"],
+      "decisions": {
+        "ud-001": "cognitive-priority",
+        "ud-003": "l1-verification"
+      },
+      "file": "F-006-role-oriented.md"
+    },
+    {
+      "id": "F-007",
+      "name": "高级主题深入",
+      "slug": "advanced-topics",
+      "priority": "P2",
+      "status": "specified",
+      "estimatedWords": 6000,
+      "estimatedTime": 120,
+      "level": "advanced",
+      "dependencies": ["F-002", "F-003", "F-004"],
+      "relatedFeatures": ["F-006"],
+      "tags": ["advanced", "deep-dive", "reference"],
+      "decisions": {
+        "ud-001": "cognitive-priority",
+        "ud-002": "ascii-only",
+        "ud-003": "l1-verification"
+      },
+      "file": "F-007-advanced-topics.md"
+    }
+  ],
+  "statistics": {
+    "totalFeatures": 7,
+    "totalWords": 29300,
+    "priorityDistribution": {
+      "P0": 3,
+      "P1": 2,
+      "P2": 2
+    },
+    "levelDistribution": {
+      "beginner": 2,
+      "intermediate": 3,
+      "advanced": 1,
+      "all": 1
+    }
+  },
+  "decisions": {
+    "UD-001": {
+      "id": "UD-001",
+      "title": "默认学习路径顺序",
+      "decision": "cognitive-priority",
+      "description": "采用认知优先路径：Command → Skill → Agent",
+      "rationale": "符合用户认知顺序，从用户可见的 Command 开始",
+      "affectedFeatures": ["F-002", "F-006"],
+      "status": "RESOLVED"
+    },
+    "UD-002": {
+      "id": "UD-002",
+      "title": "可视化渲染策略",
+      "decision": "ascii-only",
+      "description": "使用纯 ASCII 图表，不依赖外部渲染库",
+      "rationale": "确保离线可用和终端兼容，遵循 76 字符宽度限制",
+      "affectedFeatures": ["all"],
+      "status": "RESOLVED"
+    },
+    "UD-003": {
+      "id": "UD-003",
+      "title": "代码示例验证级别",
+      "decision": "l1-verification",
+      "description": "使用 L1（语法）验证级别",
+      "rationale": "低成本保证基础质量，Markdown lint + TypeScript 类型检查",
+      "affectedFeatures": ["all"],
+      "status": "RESOLVED"
+    }
+  },
+  "enhancementProposals": {
+    "EP-001": {
+      "id": "EP-001",
+      "title": "渐进式深度标记机制",
+      "status": "RESOLVED",
+      "description": "分层披露内容（基础/进阶/精通）",
+      "affectedFeatures": ["F-002", "F-007"]
+    },
+    "EP-002": {
+      "id": "EP-002",
+      "title": "代码示例分层验证",
+      "status": "PARTIAL",
+      "description": "L1 验证已实施，L2/L3 作为未来目标",
+      "affectedFeatures": ["F-001", "F-003"]
+    },
+    "EP-003": {
+      "id": "EP-003",
+      "title": "可视化与纯文本的混合策略",
+      "status": "OVERRIDE",
+      "description": "UD-002 决定使用纯 ASCII，不采用 Mermaid",
+      "affectedFeatures": ["all"]
+    },
+    "EP-004": {
+      "id": "EP-004",
+      "title": "概念依赖图导航",
+      "status": "RESOLVED",
+      "description": "使用显式依赖标记和导航组件",
+      "affectedFeatures": ["F-002", "F-006"]
+    }
+  }
+}
